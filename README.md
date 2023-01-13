@@ -5,10 +5,10 @@ Create an interactive map of the museum that visitors can use to navigate and ex
 
 # Team Members
 
-|Name|Role|Brock Email|Github|
+|Name|Role|Brock Email|Github Username|
 |--|--|--|--|
-| Andrea Baker | Product Owner, Developer | ab20zg@brocku.ca | andylouisebaker@gmail.com
-| Jacob Lavell | Developer | jl17hv@brocku.ca | SPACEHOLDER
-| Hannah Chan | Lead Developer | hc18tc@brocku.ca | hannah.chan.235@gmail.com
+| Andrea Baker | Product Owner, Developer | ab20zg@brocku.ca | andyftj
+| Jacob Lavell | Developer | jl17hv@brocku.ca | JacobLavell
+| Hannah Chan | Lead Developer | hc18tc@brocku.ca | HannahC235
 | Katherine Joun | Developer | kb09xf@brocku.ca | SPACEHOLDER
-| Victoria Peel | Scrum Master, Developer | vp19ew@brocku.ca | victoriapeel23@outlook.com
+| Victoria Peel | Scrum Master, Developer | vp19ew@brocku.ca | victoria peel
