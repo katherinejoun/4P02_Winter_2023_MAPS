@@ -10,5 +10,5 @@ Create an interactive map of the museum that visitors can use to navigate and ex
 | Andrea Baker | Product Owner, Developer | ab20zg@brocku.ca | andyftj
 | Jacob Lavell | Developer | jl17hv@brocku.ca | JacobLavell
 | Hannah Chan | Lead Developer | hc18tc@brocku.ca | HannahC235
-| Katherine Joun | Developer | kb09xf@brocku.ca | SPACEHOLDER
+| Katherine Joun | Developer | kb09xf@brocku.ca | katherinejoun
 | Victoria Peel | Scrum Master, Developer | vp19ew@brocku.ca | victoria peel
