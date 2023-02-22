@@ -1,0 +1,33 @@
+Sample Interactive Maps: 
+
+https://maps.metmuseum.org/?screenmode=base&floor=1#hash=17/40.779307/-73.963223/-61 
+
+https://www.metmuseum.org/art/online-features/metkids/explore/ 
+
+https://casaloma.ca/experience-the-castle/ 
+
+ Ideas: 
+
+Maps for different audiences: adults versus children? 
+
+Adult + look at the tone 
+
+Accessibility considerations? 
+
+Look in accessibility related stuff 
+
+Web vs mobile? 
+
+Website but optimized for phone + tablets 
+
+Scavenger hunt? 
+
+Nice to have but not necessity 
+
+Front-end first vs back-end first? 
+
+ Both at the same time 
+
+Map updating for museum staff without needing coding experience? Maybe a login that lets you update the text/pictures? Not sure how difficult this is, something to maybe consider 
+
+Look into files they can change, without having to change the code, update the file, reupload it then done - > XML 
