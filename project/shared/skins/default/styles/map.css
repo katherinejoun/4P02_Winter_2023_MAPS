@@ -1,0 +1,86 @@
+/* Mobile */
+@media (max-width: 767px) {
+    #interactiveMap {
+        position: relative;
+        padding: 40px 5% 0 5%;
+        margin: 0;
+        width: 90%;
+    }
+
+    .icon {
+        position: absolute;
+        width: 15%;
+    }
+
+    #icon1 {
+        top: 80%;
+        left: 42%;
+    }
+
+    #icon2 {
+        top: 70%;
+        left: 42%;
+    }
+
+    #icon3 {
+        top: 70%;
+        left: 60%;
+    }
+
+    #icon4 {
+        top: 60%;
+        left: 60%;
+    }
+
+    #icon5 {
+        top: 50%;
+        left: 60%;
+    }
+
+    #icon6 {
+        top: 40%;
+        left: 60%;
+    }
+
+    #icon7 {
+        top: 30%;
+        left: 60%;
+    }
+
+    #icon8 {
+        position: absolute;
+        top: 8%;
+        left: 18%;
+        font-size: 8vw;
+    }
+
+    .ui {
+        position: fixed;
+        width: 12%;
+    }
+
+    #info {
+        bottom: 0;
+        left: 0;
+    }
+
+    #en {
+        bottom: 0;
+        left: 14%;
+    }
+}
+
+/* Not mobile */
+@media (min-width: 768px) {}
+
+/*  */
+@media (min-width: 768px) and (max-width: 991px) {}
+
+/*  */
+@media (min-width: 992px) {}
+
+/*  */
+@media (min-width: 992px) and (max-width: 1199px) {}
+
+/* Desktop */
+@media (min-width: 1200px) {}
