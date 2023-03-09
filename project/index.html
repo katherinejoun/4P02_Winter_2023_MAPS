@@ -8799,7 +8799,7 @@
         id="icon1"
         class="icon"
         src="shared/skins/default/images/icon1.svg"
-        alt=""
+        alt="Arrow head"
         onClick="displayModal(1)"
         role="button"
       />
@@ -8807,7 +8807,7 @@
         id="icon2"
         class="icon"
         src="shared/skins/default/images/icon2.svg"
-        alt=""
+        alt="Flag of the United Kingdom"
         onClick="displayModal(2)"
         role="button"
       />
@@ -8823,7 +8823,7 @@
         id="icon4"
         class="icon"
         src="shared/skins/default/images/icon4.svg"
-        alt=""
+        alt="Cannon"
         onClick="displayModal(4)"
         role="button"
       />
@@ -8839,7 +8839,7 @@
         id="icon6"
         class="icon"
         src="shared/skins/default/images/icon6.svg"
-        alt=""
+        alt="Monument"
         onClick="displayModal(6)"
         role="button"
       />
@@ -8847,7 +8847,7 @@
         id="icon7"
         class="icon"
         src="shared/skins/default/images/icon7.svg"
-        alt=""
+        alt="Grapes"
         onClick="displayModal(7)"
         role="button"
       />
@@ -8859,7 +8859,7 @@
       id="info"
       class="ui"
       src="shared/skins/default/images/info.svg"
-      alt=""
+      alt="Information icon"
       onClick="displayInfo()"
       role="button"
     />
@@ -8867,7 +8867,7 @@
       id="en"
       class="ui"
       src="shared/skins/default/images/EN.svg"
-      alt=""
+      alt="Language select icon"
       onClick="displayLang()"
       role="button"
     />
@@ -8894,21 +8894,25 @@
     <div id="modalInfo" class="modal">
       <div class="modal-content">
         <span id="closeInfo" class="close">&times;</span>
+        <div id="menu-button-container"></div>
         <h1>Hours of Operation:</h1>
         <p>
-          Open every day from 1 pm - 5 pm November through April (10 am - 5 pm
-          May through October) The Museum is closed on the following holidays:
-          Good Friday, Easter Sunday, Thanksgiving Day, and during the Christmas
-          season between December 18th and January 1st. PARKING: Free street
-          parking in available out front for Museum patrons, but it is limited.
-          More free street parking can be found on both Castlereagh and Davy
-          Streets. Paid parking lots are available on Platoff Street, at Fort
-          George and at the Court House.
+          Open every day from 1 pm - 5 pm November through April<br />
+          (10 am - 5 pm May through October)<br />
+          The <b>Museum is closed</b> on the following holidays: Good Friday,
+          Easter Sunday, Thanksgiving Day, and during the Christmas season
+          between December 18th and January 1st.<br />
+          <b>PARKING:</b> Free street parking in available out front for Museum
+          patrons, but it is limited. More free street parking can be found on
+          both Castlereagh and Davy Streets. Paid parking lots are available on
+          Platoff Street, at Fort George and at the Court House.
         </p>
         <h1>Admissions:</h1>
         <p>
-          Adults - $5 Seniors (60+) - $3 Students (full-time) - $2 Age 18 and
-          Under - FREE
+          Adults - $5<br />
+          Seniors (60+) - $3<br />
+          Students (full-time) - $2<br />
+          Age 18 and under - FREE
         </p>
 
         <h1>Location:</h1>
@@ -8917,7 +8921,7 @@
     </div>
 
     <div id="modalLang" class="modal">
-      <div class="modal-content">
+      <div id="modalLang-content" class="modal-content">
         <span id="closeLang" class="close">&times;</span>
         <button class="buttonLang">English</button>
         <button class="buttonLang">Français</button>
@@ -8941,13 +8945,6 @@
       modal.style.display = "none";
     };
 
-    // Hides the modal when clicking outside it.
-    window.onclick = function (event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    };
-
     var modalInfo = document.getElementById("modalInfo");
     var spanInfo = document.getElementById("closeInfo");
 
@@ -8959,13 +8956,6 @@
     // Hides the modal on clicking the X.
     spanInfo.onclick = function () {
       modalInfo.style.display = "none";
-    };
-
-    // Hides the modal when clicking outside it.
-    window.onclick = function (event) {
-      if (event.target == modalInfo) {
-        modalInfo.style.display = "none";
-      }
     };
 
     var modalLang = document.getElementById("modalLang");
@@ -8983,10 +8973,15 @@
 
     // Hides the modal when clicking outside it.
     window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+      if (event.target == modalInfo) {
+        modalInfo.style.display = "none";
+      }
       if (event.target == modalLang) {
         modalLang.style.display = "none";
       }
     };
-    
   </script>
 </html>
