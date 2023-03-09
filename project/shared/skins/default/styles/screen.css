@@ -65,6 +65,8 @@ body {
 	margin: 0px;
 	padding: 0px;
 	text-align: left;
+	background-image: url("inside-page-background.png");
+
 }
 
 img {
