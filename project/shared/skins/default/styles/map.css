@@ -1,78 +1,3 @@
-/* Mobile */
-@media (max-width: 767px) {
-  #interactiveMap {
-    position: relative;
-    padding: 40px 5% 0 5%;
-    margin: 0;
-    width: 90%;
-  }
-
-  .icon {
-    position: absolute;
-    width: 15%;
-  }
-
-  #icon1 {
-    top: 80%;
-    left: 42%;
-  }
-
-  #icon2 {
-    top: 70%;
-    left: 42%;
-  }
-
-  #icon3 {
-    top: 70%;
-    left: 60%;
-  }
-
-  #icon4 {
-    top: 60%;
-    left: 60%;
-  }
-
-  #icon5 {
-    top: 50%;
-    left: 60%;
-  }
-
-  #icon6 {
-    top: 40%;
-    left: 60%;
-  }
-
-  #icon7 {
-    top: 30%;
-    left: 60%;
-  }
-
-  #icon8 {
-    position: absolute;
-    top: 8%;
-    left: 18%;
-    font-size: 8vw;
-    background-color: rgb(255, 255, 255);
-    padding: 3%;
-    border-radius: 30px;
-  }
-
-  .ui {
-    position: fixed;
-    width: 12%;
-  }
-
-  #info {
-    bottom: 0;
-    left: 0;
-  }
-
-  #en {
-    bottom: 0;
-    left: 14%;
-  }
-}
-
 /* Modal */
 .modal {
   display: none; /* Hidden by default */
@@ -123,8 +48,8 @@
 }
 
 .buttonLang {
-  color: #FFFFFF;
-  background-color: #C50019;
+  color: #ffffff;
+  background-color: #c50019;
   width: 80%;
   height: 40px;
   margin: 10%;
@@ -132,8 +57,170 @@
   font-size: 18px;
 }
 
+/* */
+#interactiveMap {
+  position: relative;
+  padding: 40px 5% 0 5%;
+  margin: 0;
+  width: 90%;
+}
+
+.icon {
+  position: absolute;
+}
+
+.ui {
+  position: sticky;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .icon {
+    width: 15%;
+  }
+
+  #icon1 {
+    top: 80%;
+    left: 42%;
+  }
+
+  #icon2 {
+    top: 70%;
+    left: 42%;
+  }
+
+  #icon3 {
+    top: 70%;
+    left: 60%;
+  }
+
+  #icon4 {
+    top: 60%;
+    left: 60%;
+  }
+
+  #icon5 {
+    top: 50%;
+    left: 60%;
+  }
+
+  #icon6 {
+    top: 40%;
+    left: 60%;
+  }
+
+  #icon7 {
+    top: 30%;
+    left: 60%;
+  }
+
+  #icon8 {
+    position: absolute;
+    top: 8%;
+    left: 18%;
+    font-size: 8vw;
+    background-color: rgb(255, 255, 255);
+    padding: 3%;
+    border-radius: 30px;
+  }
+
+  #icon8-2 {
+    display:none;
+  }
+
+  .ui {
+    width: 12%;
+  }
+  
+  #info {
+    bottom: 0;
+    left: 0;
+  }
+  
+  #en {
+    bottom: 0;
+    left: 14%;
+  }
+}
+
 /* Not mobile */
 @media (min-width: 768px) {
+  .icon {
+    width: 8%;
+  }
+
+  #icon1 {
+    top: 46%;
+    left: 15%;
+  }
+
+  #icon2 {
+    top: 46%;
+    left: 25%;
+  }
+
+  #icon3 {
+    top: 64%;
+    left: 25%;
+  }
+
+  #icon4 {
+    top: 64%;
+    left: 35%;
+  }
+
+  #icon5 {
+    top: 64%;
+    left: 45%;
+  }
+
+  #icon6 {
+    top: 64%;
+    left: 55%;
+  }
+
+  #icon7 {
+    top: 64%;
+    left: 65%;
+  }
+
+  #icon8 {
+    display:none;
+  }
+
+  #icon8-2 {
+    position: absolute;
+    top: 10%;
+    left: 75.5%;
+    font-size: 3vw;
+    background-color: rgb(255, 255, 255);
+    padding: 2%;
+    border-radius: 30px;
+  }
+
+  .ui {
+    width: 6%;
+  }
+  
+  #info {
+    bottom: 0;
+    left: 0;
+  }
+  
+  #en {
+    bottom: 0;
+    left: 7%;
+  }
+
+  .close {
+    font-size: 8vw;
+  }
+
+  .buttonLang {
+    height: 60px;
+    margin: 5%;
+    font-size: 24px;
+  }
 }
 
 /*  */
