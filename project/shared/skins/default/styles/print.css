@@ -1,0 +1,13 @@
+body
+{
+	margin: 0px;
+	padding: 0px;
+	font-family: Verdana, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+}
+
+#navigation, #header, #footer img, #content form
+{
+	display: none;
+}
