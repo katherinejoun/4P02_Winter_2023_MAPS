@@ -61,7 +61,8 @@
 #interactiveMap {
   position: relative;
   padding: 40px 5% 0 5%;
-  margin: 0;
+  margin-left: 5%;
+  margin-right: 5%;
   width: 90%;
 }
 
