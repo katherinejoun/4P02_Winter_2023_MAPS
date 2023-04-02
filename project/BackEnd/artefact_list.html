@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <div class="main">
+          <div class="header">
+            <h2 class="title">Manage Artefacts</h2>
+          </div>
+            <div class="centre">
+              <section class=" tabs">
+                <a href="#" class=" tab blue_tab">EXHIBIT MAP</a>
+                <a href ="exhibit_list.html" class=" tab red_tab">EXHIBIT LIST</a>   
+                <a href="#" class= "tab blue_tab">ARTEFACT LIST</a>
+                <a href="#" class= "tab clear_tab">OPTIONS</a>
+              </section>
+                <div class='table_div'>
+                <table>
+                    <tr>
+                        <th>ARTEFACTS</th>
+                        <th>ASSOCIATED EXHIBIT</th>
+                        <th>TAGS</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>Description</td>
+                        <td><select name="exhibits" id="exhibits">
+                            <option value = "#"> Exhibit 1</option>
+                            <option value = "#"> Exhibit 2</option>
+                            <option value = "#"> Exhibit 3</option>
+                          </select></td>
+                        <td>Tags</td>
+                        <td><a href="edit_artefact.html">edit / </a><a href="#" id="delete"> delete</a></td>
+                    </tr>
+                    <tr>
+                        <td>Description</td>
+                        <td><select name="exhibits" id="exhibits">
+                            <option value = "#"> Exhibit 1</option>
+                            <option value = "#"> Exhibit 2</option>
+                            <option value = "#"> Exhibit 3</option>
+                          </select></td>
+                        <td>Tags</td>
+                        <td><a href="edit_artefact.html">edit / </a><a href = "#" id="delete"> delete</a></td>
+                    </tr>
+                </table>
+
+              </div>
+              <div class="modal" id="delete_mod">
+                <div class="modal_content">
+                  <div>
+                    <p class="modal_text">Are you sure you want to delete "Artefact A"?</p>
+                  </div>
+                  <div class="button_group">
+                    <button class="btn wht_btn" id = "cancel">Cancel</button>
+                    <button class="btn red_btn" id ="confirm">Delete</button>
+                  </div>
+                </div>
+            </div>
+            <div>
+              <button onclick="location.href='new_artefact.html'" type = "submit" value ="submit" class= "btn red_btn"> Create New Artefact </button>
+            </div>
+          </div>
+            <div class="main_div" id = "logout">
+                <h4><a href="login.html">Logout</a></h4>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Get the modal
+        var modal = document.getElementById("delete_mod");
+        
+        // Get the button that opens the modal
+        var btn = document.getElementsByClassName("delete");
+        
+        // Get the <span> element that closes the modal
+        var cancel = document.getElementById("cancel");
+        
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+          modal.style.display = "block";
+        }
+        
+        // When the user clicks cancel, close the modal
+        cancel.onclick = function() {
+          modal.style.display = "none";
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+        </script>
+</body>
+</html>
