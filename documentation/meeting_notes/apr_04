@@ -1,0 +1,26 @@
+Meeting Notes
+
+Attendees
+
+Scrum Master: Victoria
+
+Product Manager: Andrea
+
+Lead Developer: Hannah
+
+Developer: Jacob
+
+Developer: Katherine
+
+Discussion Points
+
+- Any issues team members are experiencing with their tasks
+
+Outcome tasks
+
+- Andrea and Victoria large learning curve with React but not concerned about figuring it out
+- Hannah is having trouble with the connection from Supabase so will set up a meeting with Andrea and Victoria
+- Hannah has a Git pull request to be reviewed
+- Jacob required some extra information on museum layout from Andrea
+- Katherine having difficulty connecting to database, may need to create an extra page for account registration. Decided to restrict access to users with @brocku.ca email address which can be later changed to not museum email extension
+- Andrea will push changes to Git so everyone can try and get the connection to work
