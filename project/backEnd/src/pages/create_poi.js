@@ -1,21 +1,16 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="main.css">
-    </head>
-    <body>
+const CreatePoi = () => {
+  return (
+    <div className="page create">
+      <body>
         <div class="main">
           <div class="header">
             <h2 class="title">Create New Point of Interest</h2>
           </div>
           <div class="centre">
             <div class="tabs">
-              <a href="#" class=" tab red_tab">ENGLISH DATA</a>
+              {/*<a href="#" class=" tab red_tab">ENGLISH DATA</a>
               <a href ="#" class=" tab blue_tab">FRENCH DATA</a>   
-              <a href="#" class= "tab clear_tab">OPTIONS</a>
+  <a href="#" class= "tab clear_tab">OPTIONS</a>*/}
             </div>
             <div class="table_div">
               <form action ="#" method = "get">
@@ -52,11 +47,11 @@
                 </div>
                 <div class = 'form_group'>
                   <label for = "associated_artefact" class = "label"> Associated Artefact: </label>
-                  <select name="artefacts" id="artefacts" class="input_half" style="width:50%;">
+                  {/*<select name="artefacts" id="artefacts" class="input_half" style="width:50%;">
                     <option value = "#"> Artefact 1</option>
                     <option value = "#"> Artefact 2</option>
                     <option value = "#"> Artefact 3</option>
-                  </select>
+</select>*/}
                 </div>
                 <div class = 'form_group'>
                   <label for = "location" class = "label"> Location: </label>
@@ -72,4 +67,8 @@
           </div>
         </div>
     </body>
-    </html>
+    </div>
+  )
+}
+
+export default CreatePoi

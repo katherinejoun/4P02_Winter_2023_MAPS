@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-  <html>
-  <head>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="main.css">
-    </head>
+const EditPoi = () => {
+  return (
     <body>
+    <div className="page update">
         <div class="main">
           <div class="header">
-            <h2 class="title">Edit Exhibit Information</h2>
+            <h2 class="title">Edit Point of Interest</h2>
           </div>
           <div class="centre">
             <div class="tabs">
@@ -21,7 +16,7 @@
               <form action ="#" method = "get">
               <fieldset>
                 <select name="artefacts" id="artefacts">
-                  <option value="" disabled selected>Exhibit Type</option>
+                  <option value="" disabled selected>Point of Interest Type</option>
                   <option value = "#"> Artefact 1</option>
                   <option value = "#"> Artefact 2</option>
                   <option value = "#"> Artefact 3</option>
@@ -50,33 +45,32 @@
                   <label for = "upload_img" class = "label"> Upload Images or Video: </label>
                   <input class = "input_half" id = "upload_img" type="file" name="upload_img"/>
                 </div>
-                <!--* <div class = 'form_group'>
+                <div class = 'form_group'>
                   <label for = "associated_artefact" class = "label"> Associated Artefact: </label>
                   <select name="artefacts" id="artefacts" class="input_half" style="width:50%;">
                     <option value = "#"> Artefact 1</option>
                     <option value = "#"> Artefact 2</option>
                     <option value = "#"> Artefact 3</option>
                   </select>
-                </div> -->
+                </div>
                 <div class = 'form_group'>
                   <label for = "location" class = "label"> Location: </label>
-                  <select name="artefacts" id="local" class="input_half" style="width:50%;">
-                    <option value = "#"> Location 1</option>
-                    <option value = "#"> Location 2</option>
-                    <option value = "#"> Location 3</option>
-                  </select>
+                  <input class = "input_half" id = "location" type="text" name="location"/>
                 </div>
               </fieldset>
               <div>
                 <button type = "submit" value ="Reset" class= "btn red_btn"> Save Changes </button>
-                <button onclick="location.href='exhibit_list.html'" type = "reset" value ="Submit" class=" btn wht_btn" id="cancel" > Cancel </button>
+                <button type = "reset" value ="Submit" class=" btn wht_btn"> Cancel </button>                
               </div>
               </form>
             </div>             
           </div>
-          <div class="main_div" id = "logout">
-            <h4><a href="login.html">Logout</a></h4>
-          </div>
+        </div>
         </div>
     </body>
-    </html>
+    
+
+  )
+}
+
+export default EditPoi
