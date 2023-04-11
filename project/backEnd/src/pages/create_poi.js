@@ -1,4 +1,24 @@
+import { useState } from "react"
+import supabase from "../config/supabaseClient"
+
 const CreatePoi = () => {
+  const [title, setTitle] = useState('')
+  const [description, setDescription] = useState('')
+  const [relatedPages, setRelatedPages] = useState('')
+  const [tags, setTags] = useState('')
+  const [error, setError] = useState(null)
+  const [artefact, setArtefact] = useState('')
+  const [location, setLocation] = useState('')
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    if (!title || !description){
+      setError("Please fill in all required fields")
+      return 
+    }
+
+  }
+
   return (
     <div className="page create">
       <body>
@@ -13,7 +33,7 @@ const CreatePoi = () => {
   <a href="#" class= "tab clear_tab">OPTIONS</a>*/}
             </div>
             <div class="table_div">
-              <form action ="#" method = "get">
+              <form onSubmit={handleSubmit}>
               <fieldset>
                 <select name="artefacts" id="artefacts">
                   <option value="" disabled selected>Point of Interest Type</option>
@@ -23,19 +43,23 @@ const CreatePoi = () => {
                 </select>
                 <div class = 'form_group'>
                   <label for = "title" class = "title"> Title: </label>
-                  <input class = "input_half" id = "title" type="text" name="title"/>
+                  <input class = "input_half" id = "title" type="text" value={title}
+                  onChange={(e) => setTitle(e.target.value)}/>
                 </div>
                 <div class = 'form_group'>
                   <label for = "description" class = "label"> Description: </label>
-                  <input class = "input_half" id = "description" type="text" name="description"/>
+                  <input class = "input_half" id = "description" type="text" value={description}
+                  onChange={(e) => setDescription(e.target.value)}/>
                 </div>
                 <div class = 'form_group'>  
                   <label for = "related_pages" class = "label"> Related Pages: </label>
-                  <input class = "input_half" id = "related_pages" type="text" name="related_pages"/>
+                  <input class = "input_half" id = "related_pages" type="text" value={relatedPages}
+                  onChange={(e) => setRelatedPages(e.target.value)}/>
                 </div>
                 <div class = 'form_group'>
                   <label for = "tags" class = "label"> Tags: </label>
-                  <input class = "input_half" id = "tags" type="text" name="tags"/>
+                  <input class = "input_half" id = "tags" type="text" value={tags}
+                  onChange={(e) => setTags(e.target.value)}/>
                 </div>
                 <div class = 'form_group'>
                   <label for = "upload_audio" class = "label"> Upload Audio Description: </label>
@@ -55,13 +79,15 @@ const CreatePoi = () => {
                 </div>
                 <div class = 'form_group'>
                   <label for = "location" class = "label"> Location: </label>
-                  <input class = "input_half" id = "location" type="text" name="location"/>
+                  <input class = "input_half" id = "location" type="text" value={location}
+                  onChange={(e) => setLocation(e.target.value)}/>
                 </div>
               </fieldset>
               <div>
-                <button type = "submit" value ="Reset" class= "btn red_btn"> Create Point of Interest </button>
-                <button type = "reset" value ="Submit" class=" btn wht_btn"> Cancel </button>                
+                <button class= "btn red_btn"> Create Point of Interest </button>
+                <button type = "reset" class=" btn wht_btn"> Cancel </button>                
               </div>
+              {error && <p className="error">{error}</p>}
               </form>
             </div>             
           </div>
