@@ -1,50 +1,50 @@
 import supabase from "../config/supabaseClient"
 import {Link} from "react-router-dom";
 import {useEffect, useState } from "react";
-import Table from "../components/artefact_table"
+import Table from "../components/artifact_table"
 
 
-const ArtefactList = () => {
+const ArtifactList = () => {
   const [error, setError] = useState(null)
-  const [artefact, setArtefact] = useState(null)
+  const [artifact, setArtifact] = useState(null)
   
 
   useEffect(() => {
-    const fetchArtefacts = async () =>{
+    const fetchArtifacts = async () =>{
       const {data, error} = await supabase
-      .from("artefact")
+      .from("artifact")
       .select()
       if (error){
-        setError("Could not get artefact list")
-        setArtefact(null)
+        setError("Could not get artifact list")
+        setArtifact(null)
         console.log(error)
       }
       if (data){
-        setArtefact(data)
+        setArtifact(data)
         setError(null)
       }
     }
 
-    fetchArtefacts()
+    fetchArtifacts()
   })
 
   return (
     <div className="page home">
         <div class="header">
-            <h2 class="title">Manage Artefacts</h2>
+            <h2 class="title">Manage Artifacts</h2>
         </div>
         {error && (<p>{error}</p>)}
-            {artefact && (
+            {artifact && (
             <div class="main">
                 <div class="centre">
                     <div class=" tabs">
                         <a href="#" class=" tab blue_tab">EXHIBIT MAP</a>
                         <a href ="exhibit_list.html" class=" tab red_tab">EXHIBIT LIST</a>   
-                        <a href="#" class= "tab blue_tab">ARTEFACT LIST</a>
+                        <a href="#" class= "tab blue_tab">ARTIFACT LIST</a>
                         <a href="#" class= "tab clear_tab">OPTIONS</a>
                     </div>
-              {artefact.map(artefact => (
-              <Table key = {artefact.id} artefact={artefact}/>
+              {artifact.map(artifact => (
+              <Table key = {artifact.artifact_id} artifact={artifact}/>
                 ))}
         </div>  
         </div>   
@@ -54,7 +54,7 @@ const ArtefactList = () => {
 </div>
    )
 }
-export default ArtefactList
+export default ArtifactList
 
 {/* <section>
                 <table>
