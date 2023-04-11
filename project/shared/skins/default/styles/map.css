@@ -86,37 +86,37 @@
 
   #icon1 {
     top: 80%;
-    left: 42%;
+    left: 44%;
   }
 
   #icon2 {
     top: 70%;
-    left: 42%;
+    left: 44%;
   }
 
   #icon3 {
     top: 70%;
-    left: 60%;
+    left: 61%;
   }
 
   #icon4 {
     top: 60%;
-    left: 60%;
+    left: 61%;
   }
 
   #icon5 {
     top: 50%;
-    left: 60%;
+    left: 61%;
   }
 
   #icon6 {
     top: 40%;
-    left: 60%;
+    left: 61%;
   }
 
   #icon7 {
     top: 30%;
-    left: 60%;
+    left: 56%;
   }
 
   #icon8 {
@@ -185,7 +185,7 @@
   }
 
   #icon7 {
-    top: 64%;
+    top: 60%;
     left: 65%;
   }
 
@@ -195,7 +195,7 @@
 
   #icon8-2 {
     position: absolute;
-    top: 10%;
+    top: 24%;
     left: 75.5%;
     font-size: 3vw;
     background-color: rgb(255, 255, 255);
@@ -243,31 +243,31 @@
 /* Desktop */
 @media (min-width: 1200px) {
   #icon1 {
-    top: 44%;
+    top: 45.5%;
   }
 
   #icon2 {
-    top: 44%;
+    top: 45.5%;
   }
 
   #icon3 {
-    top: 62%;
+    top: 63.5%;
   }
 
   #icon4 {
-    top: 62%;
+    top: 63.5%;
   }
 
   #icon5 {
-    top: 62%;
+    top: 63.5%;
   }
 
   #icon6 {
-    top: 62%;
+    top: 63.5%;
   }
 
   #icon7 {
-    top: 62%;
+    top: 58%;
   }
 
   .ui {
