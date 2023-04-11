@@ -2,7 +2,7 @@ import { useState } from "react"
 import supabase from "../config/supabaseClient"
 import { Navigate, useNavigate } from "react-router-dom"
 
-const CreateArtefact = () => {
+const CreateArtifact = () => {
   const [artifact_name, setTitle] = useState('')
   const [artifact_description, setDescription] = useState('')
   const [tags, setTags] = useState('')
@@ -28,7 +28,7 @@ const CreateArtefact = () => {
     if (data){
         console.log(data)
         setError(null)
-        navigate('/artefactList.js')
+        navigate('/artifactList.js')
 
     }
   }
@@ -38,7 +38,7 @@ const CreateArtefact = () => {
         <body>
         <div class="main">
           <div class="header">
-            <h2 class="title">Create New Artefact</h2>
+            <h2 class="title">Create New Artifact</h2>
           </div>
             <div class="centre">
               <div class=" tabs">
@@ -83,7 +83,7 @@ const CreateArtefact = () => {
                 </fieldset>
                 <div>
                   <button type = "reset" class=" btn wht_btn"> Cancel </button>
-                  <button class= "btn red_btn"> Create Artefact </button>
+                  <button class= "btn red_btn"> Create Artifact </button>
                 </div>
                 </form>
               </div>             
@@ -96,4 +96,4 @@ const CreateArtefact = () => {
 )
 }
 
-export default CreateArtefact
+export default CreateArtifact
