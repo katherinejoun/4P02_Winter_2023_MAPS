@@ -28,6 +28,7 @@ function App() {
         <Link to="/Edit_poi">Edit POI</Link>
       </nav>
   */}
+  
       <Routes>
         <Route path="/" element={<ExhibitList />} />
         <Route path="/create_poi" element={<CreatePoi />} />

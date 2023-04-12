@@ -20,6 +20,7 @@ const Login = () => {
      alert(error.message);
     }
     else {
+      console.log(data)
       navigate("/ExhibitList");
     }
   };

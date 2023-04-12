@@ -13,11 +13,6 @@ const IsLoggedIn = async () => {
     setSession(data);
   }
   return (session);
-  if (!session) {
-    return <Login />
-  }
-  else {
 
-  }
 }
 export default IsLoggedIn;

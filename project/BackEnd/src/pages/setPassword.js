@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 const SetPassword = () => {
   const navigate = useNavigate();
   const [password, setPassword] = useState('');
+  const [password2, setPassword2] = useState('');
 
   const handle = async (event) => {
     event.preventDefault();
@@ -27,11 +28,11 @@ const SetPassword = () => {
             <div className="left">
               <p>
                 <label for="password" className="label" name="password">Enter password:</label>
-                <input type="password" id="password" name="password" className= "input_full" value={password} onChange={(e)=>setPassword(e.target.value)}/>
+                <input type="password" id="password" name="password" className= "input_full" required={true} value={password} onChange={(e)=>setPassword(e.target.value)}/>
               </p>
               <p>
                 <label for="password2">Re-Enter Password:</label>
-                <input type="password" id="password2" name="password2" className= "input_full"/>
+                <input type="password" id="password2" name="password2" className= "input_full" required={true} value={password2} onChange={(e)=>setPassword2(e.target.value)}/>
               </p>
               <button type="submit" id="submit_password" className="btn red_btn">Submit Request</button>
             </div>

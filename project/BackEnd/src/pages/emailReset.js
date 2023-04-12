@@ -36,7 +36,6 @@ const RequestPasswordReset = () => {
         <h4><a href="https://www.notlmuseum.ca/">Back to Main Site</a></h4>
       </div>
     </div>
-  
   )
 };
 
