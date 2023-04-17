@@ -11,6 +11,10 @@ const EditArtifact = () => {
     const [artifact_name, setTitle] = useState('')
     const [artifact_description, setDescription] = useState('')
     const [formError, setFormError] = useState(null)
+
+    function goBack(){
+      window.history.back();
+    }
     const handleSubmit = async (e) => {
         e.preventDefault()
 
@@ -105,7 +109,7 @@ const EditArtifact = () => {
                   </div>
                 </fieldset>
                 <div>
-                  <button type = "reset" value ="Submit" class=" btn wht_btn"> Cancel </button>
+                  <button type = "reset" value ="Submit" class=" btn wht_btn" onClick={goBack}> Cancel </button>
                   <button class= "btn red_btn"> Save Changes</button>
                 </div>
                 {formError && <p className="error">{formError}</p>}

@@ -8,7 +8,14 @@ const CreateArtifact = () => {
   const [tags, setTags] = useState('')
   const [error, setError] = useState(null)
 
-    const navigate = useNavigate()
+  const navigate = useNavigate()
+
+ 
+    function goBack(){
+      window.history.back();
+    }
+      
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -82,7 +89,7 @@ const CreateArtifact = () => {
                   </div>
                 </fieldset>
                 <div>
-                  <button type = "reset" class=" btn wht_btn"> Cancel </button>
+                  <button type = "reset" class=" btn wht_btn" onClick={goBack}> Cancel </button>
                   <button class= "btn red_btn"> Create Artifact </button>
                 </div>
                 </form>

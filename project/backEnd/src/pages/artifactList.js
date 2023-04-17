@@ -28,7 +28,8 @@ const ArtifactList = () => {
     fetchArtifacts()
   })
 
-  return (
+  
+   return (
     <div className="page home">
         <div class="header">
             <h2 class="title">Manage Artifacts</h2>
@@ -38,11 +39,18 @@ const ArtifactList = () => {
             <div class="main">
                 <div class="centre">
                     <div class=" tabs">
-                        <a href="#" class=" tab blue_tab">EXHIBIT MAP</a>
-                        <a href ="exhibit_list.html" class=" tab red_tab">EXHIBIT LIST</a>   
-                        <a href="#" class= "tab blue_tab">ARTIFACT LIST</a>
+                    <Link to="/create_artifact" class=" tab blue_tab">CREATE ARTIFACT</Link>
+                <Link to ="/create_exhibit" class=" tab red_tab">CREATE EXHIBIT</Link>   
+                <Link to="/exhibitList" class= "tab blue_tab">EXHIBIT LIST</Link>
                         <a href="#" class= "tab clear_tab">OPTIONS</a>
                     </div>
+                    <table>     
+              <tr>
+                        <th>Artifact Name</th>
+                        <th>Artifact Description</th>
+                        <th></th>
+                    </tr>
+            </table>
               {artifact.map(artifact => (
               <Table key = {artifact.artifact_id} artifact={artifact}/>
                 ))}

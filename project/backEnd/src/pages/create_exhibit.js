@@ -1,22 +1,44 @@
 import { useState } from "react"
 import supabase from "../config/supabaseClient"
+import { Navigate, useNavigate } from "react-router-dom"
 
-const CreatePoi = () => {
-  const [title, setTitle] = useState('')
-  const [description, setDescription] = useState('')
+const CreateExhibit = () => {
+  const [exhibit_name, setTitle] = useState('')
+  const [exhibit_description, setDescription] = useState('')
   const [relatedPages, setRelatedPages] = useState('')
   const [tags, setTags] = useState('')
   const [error, setError] = useState(null)
   const [artefact, setArtefact] = useState('')
-  const [location, setLocation] = useState('')
+  const [exhibit_location, setLocation] = useState('')
+  const [options, setOptions] = useState([])
 
+  const navigate = useNavigate()
+
+  function goBack(){
+    window.history.back();
+  }
+  
   const handleSubmit = async (e) => {
     e.preventDefault()
-    if (!title || !description){
+    if (!exhibit_name || !exhibit_description){
       setError("Please fill in all required fields")
       return 
     }
+    const {data, error} = await supabase
+    .from('exhibit')
+    .insert([{exhibit_name, exhibit_description}])
 
+    if (error){
+        console.log(error)
+        setError("Please fill in all required fields")
+    }
+
+    if (data){
+        console.log(data)
+        setError(null)
+        navigate('/exhibitList.js')
+
+    }
   }
 
   return (
@@ -24,7 +46,7 @@ const CreatePoi = () => {
       <body>
         <div class="main">
           <div class="header">
-            <h2 class="title">Create New Point of Interest</h2>
+            <h2 class="title">Create New Exhibit</h2>
           </div>
           <div class="centre">
             <div class="tabs">
@@ -35,20 +57,25 @@ const CreatePoi = () => {
             <div class="table_div">
               <form onSubmit={handleSubmit}>
               <fieldset>
+                {/* <select>
+                  {options.map(option =>(
+                    <option key = {option.id} value={option.value}>{option.label}</option>
+                  ))}
+                </select> */}
                 <select name="artefacts" id="artefacts">
-                  <option value="" disabled selected>Point of Interest Type</option>
+                  <option value="" disabled selected>Exhibit Type</option>
                   <option value = "#"> Artefact 1</option>
                   <option value = "#"> Artefact 2</option>
                   <option value = "#"> Artefact 3</option>
                 </select>
                 <div class = 'form_group'>
                   <label for = "title" class = "title"> Title: </label>
-                  <input class = "input_half" id = "title" type="text" value={title}
+                  <input class = "input_half" id = "title" type="text" value={exhibit_name}
                   onChange={(e) => setTitle(e.target.value)}/>
                 </div>
                 <div class = 'form_group'>
                   <label for = "description" class = "label"> Description: </label>
-                  <input class = "input_half" id = "description" type="text" value={description}
+                  <input class = "input_half" id = "description" type="text" value={exhibit_description}
                   onChange={(e) => setDescription(e.target.value)}/>
                 </div>
                 <div class = 'form_group'>  
@@ -79,13 +106,13 @@ const CreatePoi = () => {
                 </div>
                 <div class = 'form_group'>
                   <label for = "location" class = "label"> Location: </label>
-                  <input class = "input_half" id = "location" type="text" value={location}
+                  <input class = "input_half" id = "location" type="text" value={exhibit_location}
                   onChange={(e) => setLocation(e.target.value)}/>
                 </div>
               </fieldset>
               <div>
-                <button class= "btn red_btn"> Create Point of Interest </button>
-                <button type = "reset" class=" btn wht_btn"> Cancel </button>                
+                <button class= "btn red_btn"> Create New Exhibit </button>
+                <button type = "reset" class=" btn wht_btn" onClick={goBack}> Cancel </button>                
               </div>
               {error && <p className="error">{error}</p>}
               </form>
@@ -97,4 +124,4 @@ const CreatePoi = () => {
   )
 }
 
-export default CreatePoi
+export default CreateExhibit

@@ -39,11 +39,18 @@ const ExhibitList = () => {
           <div class="main">
             <div class="centre">
             <div class="tabs">
-                <a href="#" class=" tab blue_tab">EXHIBIT MAP</a>
-                <a href ="#" class=" tab red_tab">EXHIBIT LIST</a>   
-                <a href="artefact_list.html" class= "tab blue_tab">ARTEFACT LIST</a>
+                <Link to="/create_artifact" class=" tab blue_tab">CREATE ARTIFACT</Link>
+                <Link to ="/create_exhibit" class=" tab red_tab">CREATE EXHIBIT</Link>   
+                <Link to="/artifactList" class= "tab blue_tab">ARTIFACT LIST</Link>
                 <a href="#" class= "tab clear_tab">OPTIONS</a>
             </div>
+            <table>     
+              <tr>
+                        <th>Exhibit Name</th>
+                        <th>Exhibit Description</th>
+                        <th></th>
+                    </tr>
+            </table>
             {exhibits.map(exhibit => (
               <Table key = {exhibit.id} exhibit={exhibit}/>
 
