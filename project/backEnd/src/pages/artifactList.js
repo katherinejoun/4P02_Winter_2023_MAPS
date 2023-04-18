@@ -48,6 +48,7 @@ const ArtifactList = () => {
               <tr>
                         <th>Artifact Name</th>
                         <th>Artifact Description</th>
+                        <th>Exhibit Name</th>
                         <th></th>
                     </tr>
             </table>

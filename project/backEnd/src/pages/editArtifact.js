@@ -10,6 +10,7 @@ const EditArtifact = () => {
 
     const [artifact_name, setTitle] = useState('')
     const [artifact_description, setDescription] = useState('')
+    const [exhibit_id, setExhibit] = useState('')
     const [formError, setFormError] = useState(null)
 
     function goBack(){
@@ -56,6 +57,7 @@ const EditArtifact = () => {
             if(data){
                 setTitle(data.artifact_name)
                 setDescription(data.artifact_description)
+                setExhibit(data.exhibit_id)
                 console.log(data)
 
             }
@@ -97,11 +99,18 @@ const EditArtifact = () => {
                   </div>
                   <div class = 'form_group'>
                     <label for = "associated_exhibit" class = "label"> Associated Exhibit: </label>
-                    <select name="exhibits" id="exhibits" class="input_half">
-                      <option value = "#"> Exhibit 1</option>
-                      <option value = "#"> Exhibit 2</option>
-                      <option value = "#"> Exhibit 3</option>
+                    <select>
+                      {setExhibit.map(option => (
+                        <option key={artifact_id.artifact_id} value={exhibit_id.exhibit_id}>{exhibit_id.label}</option>
+                      ))}
                     </select>
+
+                  {/*   <select value={exhibit_id} id="exhibits" class="input_half" 
+                    onChange={(e) => setExhibit(e.target.value)}>
+                      <option value = "#"> 1</option>
+                      <option value = "#"> 2</option>
+                      <option value = "#"> 3</option>
+                    </select> */}
                   </div>
                   <div class = 'form_group'>
                     <label for = "upload_img" class = "label_half"> Upload Images or Video: </label>

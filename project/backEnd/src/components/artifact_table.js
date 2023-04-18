@@ -38,6 +38,7 @@ const ArtifactTable = ({artifact}) =>{
                     <tr>                        
                         <td>{artifact.artifact_name}</td>
                         <td>{artifact.artifact_description}</td>
+                        <td>{artifact.exhibit_id}</td>
                         <td><Link to={"/" + artifact.artifact_id}>edit</Link><p onClick={openModal}>delete</p>
                         <Modal
                             isOpen={modalIsOpen}
