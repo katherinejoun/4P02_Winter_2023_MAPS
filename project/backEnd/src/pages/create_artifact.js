@@ -1,14 +1,45 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import supabase from "../config/supabaseClient"
-import { Navigate, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 const CreateArtifact = () => {
   const [artifact_name, setTitle] = useState('')
   const [artifact_description, setDescription] = useState('')
+  const [exhibit_id, setExhibitId] = useState('')
+  const [selectedExhibit, setExhibitName] = useState('')
   const [tags, setTags] = useState('')
   const [error, setError] = useState(null)
+  const [exhibit, setExhibit] = useState([]); 
 
-    const navigate = useNavigate()
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    const fetchExhibits = async () =>{
+      const {data, error} = await supabase
+      .from("exhibit")
+      .select()
+      if (error){
+        setError("Could not get exhibit list")
+        setExhibit(null)
+        console.log(error)
+      }
+      if (data){
+        setExhibit(data)
+        setError(null)
+      }
+    }
+    fetchExhibits();
+  }, []);
+
+  function handleSelectChange(event) {
+    setExhibitName(event.target.value);
+  }
+ 
+  function goBack(){
+    window.history.back();
+  }
+      
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -18,7 +49,8 @@ const CreateArtifact = () => {
     }
     const {data, error} = await supabase
     .from('artifact')
-    .insert([{artifact_name, artifact_description}])
+    .insert([{artifact_name, artifact_description, "exhibit_name": selectedExhibit}
+    ])
 
     if (error){
         console.log(error)
@@ -28,7 +60,8 @@ const CreateArtifact = () => {
     if (data){
         console.log(data)
         setError(null)
-        navigate('/artifactList.js')
+        navigate('/')
+        
 
     }
   }
@@ -69,12 +102,12 @@ const CreateArtifact = () => {
                      onChange={(e) => setTags(e.target.value)}/>
   </div>*/}
                   <div class = 'form_group'>
-                    <label for = "associated_exhibit" class = "label"> Associated Exhibit: </label>
-                    <select name="exhibits" id="exhibits" class="input_half">
-                      <option value = "#"> Exhibit 1</option>
-                      <option value = "#"> Exhibit 2</option>
-                      <option value = "#"> Exhibit 3</option>
-                    </select>
+                  <label for = "associated_exhibit" class = "label"> Associated Exhibit: </label>
+                   <select value={selectedExhibit} onChange={handleSelectChange}>
+                    {exhibit.map(exhibit => (
+                      <option id="exhibits" class="input_half" key={exhibit.exhibit_id} value={exhibit.exhibit_name}>{exhibit.exhibit_name}</option>
+                    ))}
+                  </select>
                   </div>
                   <div class = 'form_group'>
                     <label for = "upload_img" class = "label_half"> Upload Images or Video: </label>
@@ -82,7 +115,7 @@ const CreateArtifact = () => {
                   </div>
                 </fieldset>
                 <div>
-                  <button type = "reset" class=" btn wht_btn"> Cancel </button>
+                  <button type = "reset" class=" btn wht_btn" onClick={goBack}> Cancel </button>
                   <button class= "btn red_btn"> Create Artifact </button>
                 </div>
                 </form>
