@@ -9,7 +9,7 @@ const RequestPasswordReset = () => {
   const handle = async (event) => {
     event.preventDefault();
     const { data, error } = await supabase.auth.resetPasswordForEmail(email, {
-        redirectTo: 'http://localhost:3000/setPassword',
+        redirectTo: 'http://localhost:3000/set_password',
       })
     if (error) {
       alert(error.message);

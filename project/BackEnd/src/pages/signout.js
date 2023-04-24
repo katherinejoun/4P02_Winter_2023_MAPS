@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import supabase from "../config/supabaseClient";
-{/*}
+
 const Logout = async () => {
   const navigate = useNavigate;
   const { error } = await supabase.auth.signOut()
@@ -8,8 +8,8 @@ const Logout = async () => {
     alert(error.message);
   }
   else {
-    navigate("/");
+    window.location.replace("https://www.notlmuseum.ca/");
   }
 }
 
-export default Logout;*/}
+export default Logout;

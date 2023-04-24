@@ -5,22 +5,30 @@ import supabase from '../config/supabaseClient';
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [password2, setPassword2] = useState("");
   const [message, setMessage] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const { data, error } = await supabase.auth.signUp({
+
+    if (password !== password2) {
+      return setMessage("Passwords must match.");
+    }
+
+    else { 
+      const { data, error } = await supabase.auth.signUp({
       email: email,
       password: password,
       options: {
         emailRedirectTo: '/'
+        }
+      })
+      if (error) {
+      alert(error.message);
       }
-    })
-    if (error) {
-     alert(error.message);
-    }
-    else {
-      alert("Check your email to confirm your registration.")
+      else {
+        alert("Check your email to confirm your registration.")
+      }
     }
   };
 
@@ -33,15 +41,25 @@ const Register = () => {
         <form onSubmit = {handleSubmit}>
           <h3>Register an account to manage the Interactive Map.  Account email must be your museum staff address.</h3>
           <div className='left'>
-            <p id="message">{message }</p>
-            <label for ="username" className ="label"> Email: </label>
-            <input className ="input_full" id ="username" type="email" name="username" required={true} value={email} onChange={(e)=>setEmail(e.target.value)}/>
-            <label for ="password" className="label">Password: </label>
-            <input className='input_full' id="password" type="password" name="password" required={true} value = {password} onChange={(e)=>setPassword(e.target.value)} />
-            <Link to="/login">Log in to existing account.</Link> 
+            <p id="message">{ message }</p>
+            <p>
+              <label for ="username" className ="label"> Email: </label>
+              <input className ="input_full" id ="username" type="email" name="username" required={true} value={email} onChange={(e)=>setEmail(e.target.value)}/>
+            </p>
+            <p>
+              <label for ="password" className="label">Password: </label>
+              <input className='input_full' id="password" type="password" name="password" required={true} value = {password} onChange={(e)=>setPassword(e.target.value)} />
+            </p>
+            <p>
+              <label for ="password2" className="label">Re-Enter Password: </label>
+              <input className='input_full' id="password2" type="password" name="password2" required={true} value = {password2} onChange={(e)=>setPassword2(e.target.value)} />
+            <Link to="/signin">Log in to an existing account.</Link> 
+            </p>
+            
+            <button type ="submit" className = "btn red_btn" id="login_btn"> Create Account </button>
           </div>
           <div>
-            <button type ="submit" className = "btn red_btn" id="login_btn"> Create Account </button>
+            
           </div>
         </form>
       </div>
