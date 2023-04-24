@@ -2,9 +2,9 @@ import { BrowserRouter, Routes, Route, Switch, Navigate } from "react-router-dom
 import supabase from "./config/supabaseClient";
 
 // pages
-import ExhibitList from "./pages/ExhibitList"
-import CreatePoi from "./pages/create_poi"
-import EditPoi from "./pages/Edit_poi";
+import ExhibitList from "./pages/exhibitList"
+import CreateExhibit from "./pages/create_exhibit"
+import EditExhibit from "./pages/edit_exhibit";
 import CreateArtifact from "./pages/create_artifact";
 import ArtifactList from "./pages/artifactList";
 import EditArtifact from "./pages/editArtifact";
@@ -22,29 +22,28 @@ function App() {
 
   return (
     <BrowserRouter>
-    {/*
-      <nav>
-      <button type = "submit" value ="submit" class= "btn red_btn" id="new_poi_btn"> Create New Point of Interest </button>
-            <div class="clear"></div>
+{/*       <nav>
+
         <Link to="/">Exhibit List</Link>
-        <Link to="/create_poi">Create Point of Interest</Link>
+        <Link to="/create_exhibit">Create Exhibit</Link>
         <Link to="/create_artifact">Create Artifact</Link>
         <Link to="/artifactList">Manage Artifacts</Link>
         <Link to="/editArtifact">Edit Artifact</Link>
-        <Link to="/Edit_poi">Edit POI</Link>
-      </nav>
-  */}
+        <Link to="/edit_exhibit">Edit Exhibit</Link>
+      </nav> */}
+
       <AuthProvider>
         <Routes>          
           <Route exact path="/" element={<RestrictedRoute><ExhibitList /></RestrictedRoute>} />
-          <Route path="/create_poi" element={<RestrictedRoute><CreatePoi /></RestrictedRoute>} />
-          <Route path="/Edit_poi" element={<RestrictedRoute><EditPoi /></RestrictedRoute>} />
+          <Route path="/create_exhibit" element={<RestrictedRoute><CreateExhibit /></RestrictedRoute>} />
+          <Route path="/edit_exhibit" element={<RestrictedRoute><EditExhibit /></RestrictedRoute>} />
           <Route path="/create_artifact" element={<RestrictedRoute><CreateArtifact /></RestrictedRoute>} />
           <Route path="/artifactList" element={ <RestrictedRoute><ArtifactList /></RestrictedRoute>} />
           <Route path="/:artifact_id" element={<RestrictedRoute><EditArtifact /></RestrictedRoute>} />
           <Route path="/ExhibitList" element={<RestrictedRoute><ExhibitList /></RestrictedRoute>}></Route>
           <Route path="/create_poi" element={ <RestrictedRoute><CreatePoi /></RestrictedRoute>} />
           <Route path="/Edit_poi" element={<RestrictedRoute><EditPoi /></RestrictedRoute>}></Route>
+          <Route path="/edit_e/:exhibit_id" element={<RestrictedRoute><EditExhibit /></RestrictedRoute>} />
           <Route path="/signin" element={<Login />}></Route>
           <Route path="/signup" element={<Register />}></Route>
           <Route path="/request_reset" element={<RequestPasswordReset />}></Route>
