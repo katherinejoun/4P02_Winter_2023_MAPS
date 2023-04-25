@@ -5,14 +5,16 @@ import supabase from "../config/supabaseClient";
 const RequestPasswordReset = () => {
   const navigate = useNavigate;
   const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   const handle = async (event) => {
     event.preventDefault();
-    const { data, error } = await supabase.auth.resetPasswordForEmail(email, {
-        redirectTo: 'http://localhost:3000/set_password',
-      })
+    const { data, error } = await supabase.auth.resetPasswordForEmail(email, { redirectTo:'http://localhost:3000/set_password'} )
     if (error) {
       alert(error.message);
+    }
+    if (data) {
+      setMessage("Check your email for the reset link.");
     }
   }
 
@@ -25,9 +27,9 @@ const RequestPasswordReset = () => {
         <form onSubmit={handle}>
           <h3>To request a password reset, enter the email address you use to login in.  An email with a reset link will be sent to your account.</h3>
           <div className='left'>
-            <p id="message"></p>
+            <p id="message">{message}</p>
             <label for = "username" className = "label"> Email: </label>
-            <input className = "input_full" id = "username" type="text" name="username" value={email} onChange={(e) => setEmail(e.target.value)}/>
+            <input className = "input_full" id = "username" type="text" name="username" required={true} value={email} onChange={(e) => setEmail(e.target.value)}/>
             <button type = "submit" className = "btn red_btn" id="login_btn"> Send Request </button>
           </div>
         </form>

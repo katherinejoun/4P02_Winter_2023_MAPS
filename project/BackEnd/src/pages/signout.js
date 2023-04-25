@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import supabase from "../config/supabaseClient";
 
-const Logout = async () => {
+const Signout = async () => {
   const navigate = useNavigate;
   const { error } = await supabase.auth.signOut()
   if (error) {
@@ -12,4 +12,4 @@ const Logout = async () => {
   }
 }
 
-export default Logout;
+export default Signout;

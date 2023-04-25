@@ -2,6 +2,7 @@ import supabase from "../config/supabaseClient"
 import {Link} from "react-router-dom";
 import {useEffect, useState } from "react";
 import Table from "../components/artifact_table"
+import Signout from "./signout";
 
 
 const ArtifactList = () => {
@@ -29,7 +30,7 @@ const ArtifactList = () => {
   })
 
   
-   return (
+  return (
     <div className="page home">
         <div class="header">
             <h2 class="title">Manage Artifacts</h2>
@@ -40,28 +41,30 @@ const ArtifactList = () => {
                 <div class="centre">
                     <div class=" tabs">
                     <Link to="/create_artifact" class=" tab blue_tab">CREATE ARTIFACT</Link>
-                <Link to ="/create_exhibit" class=" tab red_tab">CREATE EXHIBIT</Link>   
-                <Link to="/exhibitList" class= "tab blue_tab">EXHIBIT LIST</Link>
-                        <a href="#" class= "tab clear_tab">OPTIONS</a>
+                    <Link to ="/create_exhibit" class=" tab red_tab">CREATE EXHIBIT</Link>   
+                    <Link to="/exhibitList" class= "tab blue_tab">EXHIBIT LIST</Link>
+                    <a href="#" class= "tab clear_tab">OPTIONS</a>
                     </div>
                     <table>     
-              <tr>
+                      <tr>
                         <th>Artifact Name</th>
                         <th>Artifact Description</th>
                         <th>Exhibit Name</th>
                         <th></th>
-                    </tr>
-            </table>
+                      </tr>
+                    </table>
               {artifact.map(artifact => (
               <Table key = {artifact.artifact_id} artifact={artifact}/>
                 ))}
-        </div>  
-        </div>   
-           
+                </div>  
+              </div>   
+           )}
 
-)}
-</div>
-   )
+        <div className="main_div" id="logout">
+          <span onClick={Signout}><h4>Logout</h4></span>
+        </div>
+    </div>
+  )
 }
 export default ArtifactList
 

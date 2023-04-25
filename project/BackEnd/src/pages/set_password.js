@@ -21,6 +21,7 @@ const SetPassword = () => {
     if (error) {
       alert(error.message);
     }else {
+      alert("Password reset successful.")
       navigate('/ExhibitList')
     }
   }
@@ -50,7 +51,7 @@ const SetPassword = () => {
         </div>
       </div>
       <div className="main_div" id = "logout">
-        <h4><Link to="/login">Return to Login</Link></h4>
+        <h4><Link to="/signin">Return to Login</Link></h4>
       </div>
     </body>
   )

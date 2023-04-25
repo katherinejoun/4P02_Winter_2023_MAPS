@@ -1,9 +1,8 @@
 import supabase from "../config/supabaseClient"
 import {Link, useNavigate, Navigate} from "react-router-dom";
-import {useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Table from "../components/exhibit_table"
-import Logout from "./signout";
-import { UserAuth } from "../components/auth";
+import Signout from "./signout";
 
 
 const ExhibitList = () => {
@@ -65,7 +64,7 @@ const ExhibitList = () => {
         </div>
       )}
       <div className="main_div" id = "logout">
-        <span onClick={Logout}><h4>Logout</h4></span>
+        <span onClick={Signout}><h4>Logout</h4></span>
       </div>
     </div>
 

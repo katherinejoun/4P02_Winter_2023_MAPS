@@ -1,18 +1,16 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom"
 import { useState } from "react";
 import '../index.css';
 import supabase from "../config/supabaseClient";
-import { AuthContext, UserAuth } from "../components/auth";
-import getAuthenticated from "../components/get_auth";
+import authenticatedUser from "../components/auth";
 
-const Login = () => {
+const Signin = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-  const userSession  = useContext(AuthContext);
-  const session = getAuthenticated();  
+  const session = authenticatedUser();  
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -22,7 +20,7 @@ const Login = () => {
     })
     if (error) {
       console.log(error);
-      alert(error.message);
+      setMessage("Invalid login credentials.")
     }
     else {
       console.log(data);
@@ -40,7 +38,7 @@ const Login = () => {
           <form onSubmit={handleSubmit}>
             <h3>Log in to Manage and Edit the Interactive Map</h3>
             <div className='left'>
-              <p id="message"></p>
+              <p id="message">{message}</p>
               <p>
                 <label for = "username" className = "label"> Email: </label>
                 <input className = "input_full" id = "username" type="text" name="username" required={true} value={email} onChange={(e)=>setEmail(e.target.value)}/>
@@ -50,7 +48,7 @@ const Login = () => {
                 <input className = "input_full" id = "password" type="password" name="password" required={true} value={password} onChange={(e)=>setPassword(e.target.value)}/>
               </p>
               <Link to="/request_reset">Forgot your password?</Link> Or, 
-              <Link to="/signup"> Create an account.</Link>
+              <Link to="/signup"> create an account.</Link>
               <button type = "submit" className = "btn red_btn" id="login_btn"> Log In </button>
             </div>
           </form>
@@ -70,7 +68,7 @@ const Login = () => {
   }
 }
 
-export default Login;
+export default Signin;
 
 {/*
 const CreateLogin = () => {

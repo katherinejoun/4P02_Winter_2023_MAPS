@@ -1,20 +1,34 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import supabase from "../config/supabaseClient";
 
-export const AuthContext = createContext(null);
+const authenticatedUser = () => {
+  const projectName = process.env.REACT_APP_SUPABASE_NAME
+  const tokenKey = "sb-" + projectName + "-auth-token";
 
-export const AuthProvider = ({children}) => {
-  const [ userSession, setUserSession ] = useState(null);
+  const session = localStorage.getItem(tokenKey);
+  {/*const userID = JSON.parse(sess);*/}
 
-  useEffect(() => {
-    supabase.auth.getSession().then(({ data: { userSession } }) => {
-      setUserSession(userSession)
-    })
+  {/*const [authUser, setAuthUser] = findUser();
 
-  supabase.auth.onAuthStateChange((_event, userSession) => {
-      setUserSession(userSession)
-    })
-  }, [])
+  const findUser = async () => {
+          const {data, error} = await supabase
+          .from("users")
+          .select()
+          .eq('id', userID);
+    if (data) {
+      setAuthUser(data);
+    }
+    if (error) {
+      setAuthUser(null);
+    }
 
-  return <AuthContext.Provider value={userSession}>{children}</AuthContext.Provider>
+    }
+    useEffect(() => {
+      findUser();
+    },[])*/}
+
+
+  return session;
 }
+export default authenticatedUser;
+  
