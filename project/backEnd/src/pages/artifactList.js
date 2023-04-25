@@ -2,7 +2,7 @@ import supabase from "../config/supabaseClient"
 import {Link} from "react-router-dom";
 import {useEffect, useState } from "react";
 import Table from "../components/artifact_table"
-import Signout from "./signout";
+import Signout from "../components/signout";
 
 
 const ArtifactList = () => {

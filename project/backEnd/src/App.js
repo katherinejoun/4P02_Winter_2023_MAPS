@@ -31,7 +31,7 @@ function App() {
       </nav> */}
 
         <Routes>          
-          <Route exact path="/" element={<RestrictedRoute><ExhibitList /></RestrictedRoute>} />
+          <Route path="/" element={<RestrictedRoute><ExhibitList /></RestrictedRoute>} />
           <Route path="/create_exhibit" element={<RestrictedRoute><CreateExhibit /></RestrictedRoute>} />
           <Route path="/edit_exhibit" element={<RestrictedRoute><EditExhibit /></RestrictedRoute>} />
           <Route path="/create_artifact" element={<RestrictedRoute><CreateArtifact /></RestrictedRoute>} />
@@ -44,7 +44,7 @@ function App() {
           <Route path="/request_reset" element={<RequestPasswordReset />}></Route>
           <Route path="/set_password" element={<SetPassword />}></Route>
           {/*<Route path="/not_found" element={<NotFound />}></Route>
-          <Route path="*" element={<Navigate to="/not_found" />} />*/}
+          <Route path="/*" element={<NotFound />} />
           {/*<Route path="/:id" element={<Update />} />*/}
         </Routes>
     </BrowserRouter>

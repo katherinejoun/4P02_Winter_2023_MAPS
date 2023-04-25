@@ -2,7 +2,7 @@ import supabase from "../config/supabaseClient"
 import {Link, useNavigate, Navigate} from "react-router-dom";
 import { useEffect, useState } from "react";
 import Table from "../components/exhibit_table"
-import Signout from "./signout";
+import Signout from "../components/signout";
 
 
 const ExhibitList = () => {
